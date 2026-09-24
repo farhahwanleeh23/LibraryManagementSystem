@@ -1,1 +1,3 @@
 
+//[HttpPost] RegisterBook()
+//[HttpPost] UpdateBookStatus()
