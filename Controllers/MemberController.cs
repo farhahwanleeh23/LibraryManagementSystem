@@ -1,0 +1,3 @@
+
+//[HttpPost] RegisterMembership()
+//[HttpGet] RetrieveMember()
