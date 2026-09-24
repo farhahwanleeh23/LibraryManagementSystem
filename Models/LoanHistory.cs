@@ -23,6 +23,9 @@ namespace LibraryManagementSystem.Models
         ReturnDate = null;
         Status = "Active";
       }
+
+        //ProcessBookReturn()
+        //CheckLoanOverdue()
     }
 }
 
