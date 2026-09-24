@@ -1,1 +1,35 @@
 
+--Table Books
+CREATE TABLE Books (
+    BookId UNIQUEIDENTIFIER PRIMARY KEY,
+    ISBN VARCHAR(13) NOT NULL,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Publisher VARCHAR(255) NOT NULL,
+    PublicationYear INT NOT NULL,
+    Category VARCHAR(100) NOT NULL,
+    AvailabilityStatus VARCHAR(50) NOT NULL DEFAULT 'Available'
+);
+
+--Table Members
+CREATE TABLE Members (
+    MemberId UNIQUEIDENTIFIER PRIMARY KEY,
+    FullName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE NOT NULL,
+    PhoneNumber VARCHAR(50) NOT NULL,
+    MembershipStatus VARCHAR(50) NOT NULL DEFAULT 'Active',
+    BorrowingQuota INT NOT NULL DEFAULT 0
+);
+
+--Table LoanHistory
+CREATE TABLE LoanHistories (
+    LoanId UNIQUEIDENTIFIER PRIMARY KEY,
+    BookId UNIQUEIDENTIFIER NOT NULL,
+    MemberId UNIQUEIDENTIFIER NOT NULL,
+    IssueDate DATETIME NOT NULL,
+    DueDate DATETIME NOT NULL,
+    ReturnDate DATETIME NULL,
+    Status VARCHAR(50) NOT NULL DEFAULT 'Active',
+    FOREIGN KEY (BookId) REFERENCES Books(BookId),
+    FOREIGN KEY (MemberId) REFERENCES Members(MemberId)
+);
