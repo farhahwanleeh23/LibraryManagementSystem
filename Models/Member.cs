@@ -19,7 +19,7 @@ namespace LibraryManagementSystem.Models
             Email = email;
             PhoneNumber = phoneNumber;
             MembershipStatus = "Active";
-            BorrowingQuota = 0;
+            BorrowingQuota = 5;
         }
     }
 }
