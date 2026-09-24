@@ -21,5 +21,7 @@ namespace LibraryManagementSystem.Models
             MembershipStatus = "Active";
             BorrowingQuota = 5;
         }
+
+        //UpdateBorrowingQuota()
     }
 }
