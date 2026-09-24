@@ -25,6 +25,11 @@ namespace LibraryManagementSystem.Models
             AvailabilityStatus = "Available";
         }
 
+        public void UpdateAvailabilityStatus(string status)
+        {
+            AvailabilityStatus = status;
+        }
+
     }
 }
 
